@@ -1,0 +1,20 @@
+package:
+  name: openmpi
+  version: "1.10.2"
+source:
+  fn: openmpi-1.10.2.tar.gz
+  url: https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.2.tar.bz2
+  sha1: 03934fc0a2dd0d0d2d0459d714a976eabca938fb 
+  md5: b2f43d9635d2d52826e5ef9feb97fd4c
+build:
+    number: 1
+requirements:
+  build:
+  run:
+test:
+  commands:
+    - mpirun --version
+about:
+  home: https://www.open-mpi.org/
+  license: The BSD 2-Clause License
+  summary: A High Performance Message Passing Library
