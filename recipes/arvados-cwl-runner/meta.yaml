@@ -1,0 +1,37 @@
+package:
+  name: arvados-cwl-runner
+  version: '1.0.20170327202303'
+
+source:
+  fn: arvados-cwl-runner-1.0.20170327202303.tar.gz
+  url: https://pypi.python.org/packages/66/24/4a44eaa001dd64b7c3722e322c33338044f44e9d36dec5204d368d291fd8/arvados-cwl-runner-1.0.20170327202303.tar.gz
+  md5: 3240ab87d8c313bc5f50c31d666d16d5
+
+build:
+  number: 0
+  skip: True # [not py27]
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - cwltool ==1.0.20170217172322
+    - arvados-python-client >=0.1.20161123074954
+
+  run:
+    - python
+    - cwltool ==1.0.20170217172322
+    - arvados-python-client >=0.1.20161123074954
+
+test:
+  imports:
+    - arvados_cwl
+
+  # Needs connection to Arvados server to run help
+  #commands:
+  #  - arvados-cwl-runner --help
+
+about:
+  home: https://github.com/curoverse/arvados/tree/master/sdk/cwl
+  license: Apache 2.0
+  summary: 'Arvados Common Workflow Language runner'

@@ -3,8 +3,9 @@ about:
     license: "The Artistic License"
     summary: "MUMmer is a system for rapidly aligning entire genomes"
 build:
-  number: 3
-package: 
+  number: 4
+  skip: False
+package:
   name: mummer
   version: '3.23'
 source:
@@ -22,7 +23,7 @@ test:
         #- "delta-filter -h &> /dev/null"
         #- "dnadiff -h &> /dev/null"
         #- "mapview -h &> /dev/null"
-        #- "mummerplot -h &> /dev/null"
+        - "mummerplot -h &> /dev/null"
         - "nucmer -h &> /dev/null"
         - "promer -h &> /dev/null"
         - "show-aligns -h &> /dev/null"

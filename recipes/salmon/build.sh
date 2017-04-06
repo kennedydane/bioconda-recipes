@@ -1,8 +1,10 @@
 #!/bin/bash
 set -eu -o pipefail
 
+mkdir -p $PREFIX/bin
+mkdir -p $PREFIX/lib
+
 mkdir -p build
-sed -i 's/Boost_USE_STATIC_LIBS ON/Boost_USE_STATIC_LIBS OFF/' CMakeLists.txt
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBOOST_ROOT=$PREFIX -DBoost_NO_SYSTEM_PATHS=ON -DBoost_DEBUG=ON ..
-make install
+cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 -DCONDA_BUILD=TRUE -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DBOOST_ROOT=$PREFIX -DBoost_NO_SYSTEM_PATHS=ON ..
+make install CFLAGS="-L${PREFIX}/lib -I${PREFIX}/include"

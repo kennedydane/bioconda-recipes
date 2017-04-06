@@ -1,25 +1,26 @@
 package:
   name: clark
-  version: "1.2.2_b"
+  version: "1.2.3"
 
 build:
-  number: 0
+  number: 2
 
 source:
-  fn: CLARKV1.2.2-b.tar.gz
-  url: http://clark.cs.ucr.edu/Download/CLARKV1.2.2-b.tar.gz
-  md5: 74a7a8836eb6b43276997bdc473e0757
+  fn: CLARKV1.2.3.tar.gz
+  url: http://clark.cs.ucr.edu/Download/CLARKV1.2.3.tar.gz
+  md5: 32d5643476452c7e70539663fe253ff2
 
 requirements:
   build:
-  - gcc
+  - gcc  # [not osx]
+  - llvm  # [osx]
 
   run:
-  - libgcc
+  - libgcc  # [not osx]
 
 test:
   commands:
-    - CLARK --help 2>&1 | grep k-spectrum > /dev/null
+    - CLARK --help 
 
 about:
   home: http://clark.cs.ucr.edu/

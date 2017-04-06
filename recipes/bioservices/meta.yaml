@@ -1,30 +1,19 @@
 package:
   name: bioservices
-  version: "1.4.5"
+  version: "1.4.16"
 
 source:
-  fn: bioservices-1.4.5.tar.gz
-  url: https://pypi.python.org/packages/source/b/bioservices/bioservices-1.4.5.tar.gz
-  md5: 8b903e6a006d3ff3ffb641a4f836d75b
+  fn: bioservices.1.4.16.tar.gz
+  url: https://pypi.python.org/packages/40/b0/a105fb56c0210693352dc7136bf3f34ef622768d4c51f796d89bee87f559/bioservices-1.4.16.tar.gz
+  md5: 1a5509f892ac47db176b183a106a623a
+
 #  patches:
    # List any patch files here
    # - fix.patch
 
-# build:
-  # noarch_python: True
-  # preserve_egg_dir: True
-  # entry_points:
-    # Put any entry points (scripts to be generated automatically) here. The
-    # syntax is module:function.  For example
-    #
-    # - bioservices = bioservices:main
-    #
-    # Would create an entry point called bioservices that calls bioservices.main()
-
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+build:
+  skip: False
+  number: 1
 
 requirements:
   build:
@@ -33,11 +22,13 @@ requirements:
     - grequests
     - requests
     - requests-cache
-    - easydev 
+    - easydev
     - beautifulsoup4
     - suds-jurko
     - appdirs
     - wrapt
+    - numpydoc
+    - xmltodict
 
   run:
     - python
@@ -49,6 +40,7 @@ requirements:
     - suds-jurko
     - appdirs
     - wrapt
+    - numpydoc
 
 test:
   # Python imports

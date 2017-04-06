@@ -1,10 +1,10 @@
 package:
   name: bioconductor-genefilter
-  version: 1.52.0
+  version: 1.56.0
 source:
-  fn: genefilter_1.52.0.tar.gz
-  url: http://bioconductor.org/packages/release/bioc/src/contrib/genefilter_1.52.0.tar.gz
-  md5: b7eeef0248b242ece1061193107c660f
+  fn: genefilter_1.56.0.tar.gz
+  url: http://bioconductor.org/packages/release/bioc/src/contrib/genefilter_1.56.0.tar.gz
+  md5: 919e4deb451ca4e9dbea1e125e15cf98
 build:
   number: 0
   rpaths:
@@ -12,14 +12,18 @@ build:
     - lib/
 requirements:
   build:
+    - gcc
     - bioconductor-annotate
     - bioconductor-annotationdbi
     - bioconductor-biobase
+    - 'bioconductor-s4vectors >=0.9.42'
     - r
   run:
+    - libgcc
     - bioconductor-annotate
     - bioconductor-annotationdbi
     - bioconductor-biobase
+    - 'bioconductor-s4vectors >=0.9.42'
     - r
 test:
   commands:

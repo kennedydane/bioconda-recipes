@@ -1,16 +1,13 @@
 package:
   name: gemini
-  version: "0.18.1"
+  version: "0.20.0a0"
 build:
-  number: 3
+  number: 0
   skip: True # [not py27]
 source:
-  # patch config generation issue in 0.18.1
-  fn: gemini-6187820.tar.gz
-  url: https://github.com/arq5x/gemini/archive/6187820.tar.gz
-  #fn: gemini-0.18.1.tar.gz
-  #url: https://pypi.python.org/packages/source/g/gemini/gemini-0.18.1.tar.gz
-  #md5: eae6081847392e7a4535c2c909900a59
+  fn: gemini-820ddf68.tar.gz
+  url: https://github.com/arq5x/gemini/archive/820ddf68.tar.gz
+  md5: a96de735a46aa2c7219fd2ae65194b9f
 
 requirements:
   build:
@@ -21,7 +18,7 @@ requirements:
     - bx-python
     - cyordereddict
     - cython
-    - cyvcf2
+    - cyvcf2 >0.6.5
     - geneimpacts
     - inheritance
     - ipyparallel
@@ -37,6 +34,8 @@ requirements:
     - pyyaml
     - scipy
     - unidecode
+    - snappy
+    - python-snappy
   run:
     - python
     - bcolz
@@ -44,7 +43,7 @@ requirements:
     - bx-python
     - cyordereddict
     - cython
-    - cyvcf2
+    - cyvcf2 >0.6.5
     - geneimpacts
     - inheritance
     - ipyparallel
@@ -53,6 +52,7 @@ requirements:
     - networkx
     - numexpr
     - numpy
+    - sqlalchemy
     - openpyxl
     - pandas
     - pybedtools
@@ -61,6 +61,8 @@ requirements:
     - scipy
     - unidecode
     - grabix
+    - snappy
+    - python-snappy
 
 test:
   commands:

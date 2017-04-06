@@ -1,38 +1,28 @@
 package:
   name: snippy
-  version: '2.9'
+  version: '3.1'
 
 source:
-  fn: v2.9.zip
-  md5: a0a0f14510c37b5a1f36be06e2afdf3c
-  url: https://github.com/tseemann/snippy/archive/v2.9.zip
+  fn: snippy_v3.1.tar.gz
+  md5: 775aeadd899d731a8aed4f6e027a9ea4
+  url: https://github.com/tseemann/snippy/archive/v3.1.tar.gz
 
 build:
   number: 1
 
 requirements:
-  build:
-    - perl-threaded
-    - perl-bioperl
-    - perl-app-cpanminus
-    - perl-module-build
-    - bwa
-    - samtools
-    - parallel
-    - freebayes
-    - vcflib
-    - vcftools
-    - snpeff
   run:
-    - perl-threaded
-    - perl-bioperl
-    - bwa
-    - samtools
-    - parallel
-    - freebayes
+    - perl
+    - perl-bioperl ==1.6.924
+    - perl-list-moreutils >=0.413
+    - bwa >=0.7.12
+    - samtools >=1.3
+    - parallel >=20130422
+    - freebayes >=0.9.20
     - vcflib
-    - vcftools
-    - snpeff
+    - vcftools >=0.1.14
+    - snpeff >=4.1
+    - htslib >=1.4
 
 test:
   commands:
@@ -42,4 +32,3 @@ about:
   home: https://github.com/tseemann/snippy
   license: GPL2
   summary: Rapid bacterial SNP calling and core genome alignments
-

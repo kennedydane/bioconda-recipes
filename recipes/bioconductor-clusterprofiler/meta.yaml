@@ -1,10 +1,10 @@
 package:
   name: bioconductor-clusterprofiler
-  version: 2.4.3
+  version: 3.0.5
 source:
-  fn: clusterProfiler_2.4.3.tar.gz
-  url: http://bioconductor.org/packages/release/bioc/src/contrib/clusterProfiler_2.4.3.tar.gz
-  md5: 3db664f806e380de993bbb671fe6077a
+  fn: clusterProfiler_3.0.5.tar.gz
+  url: https://www.bioconductor.org/packages/3.3/bioc/src/contrib/clusterProfiler_3.0.5.tar.gz
+  md5: 501b5ff766c9458faffcd3e483d527c6
 build:
   number: 0
   rpaths:
@@ -17,24 +17,28 @@ requirements:
     - bioconductor-go.db
     - bioconductor-gosemsim
     - bioconductor-keggrest
+    - bioconductor-gseabase
     - bioconductor-qvalue
     - bioconductor-topgo
-    - 'r >=3.1.0'
+    - r
     - r-ggplot2
     - r-magrittr
     - r-plyr
+    - r-tidyr
   run:
     - bioconductor-annotationdbi
     - bioconductor-dose
     - bioconductor-go.db
     - bioconductor-gosemsim
     - bioconductor-keggrest
+    - bioconductor-gseabase
     - bioconductor-qvalue
     - bioconductor-topgo
-    - 'r >=3.1.0'
+    - r
     - r-ggplot2
     - r-magrittr
     - r-plyr
+    - r-tidyr
 test:
   commands:
     - '$R -e "library(''clusterProfiler'')"'

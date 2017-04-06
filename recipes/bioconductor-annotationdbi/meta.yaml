@@ -1,37 +1,40 @@
 package:
   name: bioconductor-annotationdbi
-  version: 1.32.2
+  version: "1.36.2"
+
 source:
-  fn: AnnotationDbi_1.32.2.tar.gz
-  url: http://bioconductor.org/packages/release/bioc/src/contrib/AnnotationDbi_1.32.2.tar.gz
-  md5: ba140d55df3ee82d36c80b5ba5b22bae
+  url: https://bioconductor.org/packages/release/bioc/src/contrib/AnnotationDbi_1.36.2.tar.gz
+  md5: ef0bfa62487e2ec5f301a182897006f7
+
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
-    - 'bioconductor-biobase >=1.17.0'
-    - 'bioconductor-biocgenerics >=0.15.10'
+    - bioconductor-biobase >=1.17.0
+    - bioconductor-biocgenerics >=0.15.10
     - bioconductor-iranges
-    - bioconductor-s4vectors
-    - 'r >=2.7.0'
+    - bioconductor-s4vectors >=0.9.25
+    - r-base #>= 2.7.0
     - r-dbi
     - r-rsqlite
   run:
-    - 'bioconductor-biobase >=1.17.0'
-    - 'bioconductor-biocgenerics >=0.15.10'
+    - bioconductor-biobase >=1.17.0
+    - bioconductor-biocgenerics >=0.15.10
     - bioconductor-iranges
-    - bioconductor-s4vectors
-    - 'r >=2.7.0'
+    - bioconductor-s4vectors >=0.9.25
+    - r-base #>= 2.7.0
     - r-dbi
     - r-rsqlite
+
 test:
   commands:
     - '$R -e "library(''AnnotationDbi'')"'
 about:
-  home: http://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html
+  home: https://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html
   license: Artistic-2.0
-  summary: 'Provides user interface and database connection code for annotation data
-    packages using SQLite data storage.'
+  summary: 'Provides user interface and database connection code for
+  annotation data packages using SQLite data storage.'

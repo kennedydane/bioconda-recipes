@@ -1,0 +1,31 @@
+package:
+  name: cwl2wdl
+  version: "0.1dev44"
+
+source:
+  fn: cwl2wdl-b6dbaea.tar.gz
+  url: https://github.com/chapmanb/cwl2wdl/archive/b6dbaea.tar.gz
+  md5: 747d7d6047706da03b8648de05a58fa6
+
+build:
+  skip: False
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pyyaml
+
+  run:
+    - python
+    - pyyaml
+
+test:
+  commands:
+    - cwl2wdl --help
+
+about:
+  home: https://github.com/adamstruck/cwl2wdl
+  license: MIT
+  summary: Proof of concept converter from Common Workflow Language (CWL) to the Broad Institute's Workflow Definition Language (WDL).

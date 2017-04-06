@@ -1,20 +1,23 @@
 package:
   name: dazz_db
-  version: "1.0"
+  version: "1.0p1"
 
 build:
-  number: 0
+  number: 1
 source:
-  fn: V1.0.tar.gz
-  md5: 12496195e13cc2e6d61f2647ab2ea2eb
-  url: https://github.com/thegenemyers/DAZZ_DB/archive/V1.0.tar.gz
+  fn: dazz_db_V1.0p1.tar.gz
+  md5: be7950d41f776b542d98ab2376d92a25
+  url: https://github.com/thegenemyers/DAZZ_DB/archive/e31d4517ab9f4fad6571a351ba10f87db35b8bc8.tar.gz
 
 
 requirements:
   build:
-    - gcc
+    - gcc   # [not osx]
+    - llvm  # [osx]
+    - zlib
   run:
-    - libgcc
+    - libgcc   # [not osx]
+    - zlib
 test:
     commands:
        - fasta2DB 2>&1 | grep Usage > /dev/null
@@ -22,5 +25,5 @@ test:
 about:
   home: 'https://github.com/thegenemyers/DAZZ_DB'
   license: Custom
-  license_file: README
+  license_file: README.md
   summary: "DAZZ_DB: The Dazzler Data Base"

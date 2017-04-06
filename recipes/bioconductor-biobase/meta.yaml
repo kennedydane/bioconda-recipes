@@ -1,10 +1,9 @@
 package:
   name: bioconductor-biobase
-  version: 2.30.0
+  version: 2.34.0
 source:
-  fn: Biobase_2.30.0.tar.gz
-  url: http://bioconductor.org/packages/release/bioc/src/contrib/Biobase_2.30.0.tar.gz
-  md5: 697d3b5504f899c38a5e6e784ca0e33f
+  url: https://bioconductor.org/packages/release/bioc/src/contrib/Biobase_2.34.0.tar.gz
+  md5: b761d9241462a4c6403731203c9fbb94
 build:
   number: 0
   rpaths:
@@ -13,14 +12,14 @@ build:
 requirements:
   build:
     - 'bioconductor-biocgenerics >=0.3.2'
-    - 'r >=2.10'
+    - r-base
   run:
     - 'bioconductor-biocgenerics >=0.3.2'
-    - 'r >=2.10'
+    - r-base
 test:
   commands:
     - '$R -e "library(''Biobase'')"'
 about:
-  home: http://bioconductor.org/packages/release/bioc/html/Biobase.html
+  home: https://bioconductor.org/packages/release/bioc/html/Biobase.html
   license: Artistic-2.0
   summary: 'Functions that are needed by many other packages or which replace R functions.'

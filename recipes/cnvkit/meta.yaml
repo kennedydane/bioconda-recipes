@@ -1,13 +1,15 @@
 package:
   name: cnvkit
-  version: '0.7.6'
+  version: '0.8.5'
 
 source:
-  fn: CNVkit-0.7.6.tar.gz
-  url: https://pypi.python.org/packages/source/C/CNVkit/CNVkit-0.7.6.tar.gz
+  fn: cnvkit-0.8.5.tar.gz
+  url: https://pypi.python.org/packages/bb/05/336b14341a942aeb40e4692f75e05d8cc35dc6ef5c8524df6c91a56b1eba/CNVkit-0.8.5.tar.gz
+  md5: eb73600ad48daadc7db11bae10e77c4a
 
 build:
   number: 0
+  skip: False
 
 requirements:
   build:
@@ -17,16 +19,18 @@ requirements:
   run:
     - python
     - atlas # [not osx]
-    - numpy
-    - scipy
-    - pandas
-    - matplotlib
-    - biopython
-    - reportlab
-    - pysam
-    - pyvcf
+    - numpy >=1.9
+    - scipy >=0.9
+    - pandas >=0.18.1
+    - matplotlib >=1.1
+    - biopython >=1.62
+    - reportlab >=3.0
+    - pysam >=0.9.1.4
     - r-pscbs
     - r-cghflasso
+    - pyfaidx >=0.4.7
+    - future >=0.15.2
+    - futures >=3.0
 
 test:
   imports:
@@ -36,5 +40,5 @@ test:
 
 about:
   home: https://github.com/etal/cnvkit
-  license: MIT
+  license: Apache License 2.0
   summary: Copy number variant detection from targeted DNA sequencing

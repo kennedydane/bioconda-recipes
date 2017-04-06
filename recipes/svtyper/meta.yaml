@@ -1,26 +1,23 @@
 package:
   name: svtyper
-  version: 0.0.2
+  version: 0.1.1
 
 source:
-  fn: svtyper-faecbc5.tar.gz
-  url: https://github.com/hall-lab/svtyper/archive/faecbc5.tar.gz
-  #fn: svtyper-0.0.2.tar.gz
-  #url: https://github.com/hall-lab/svtyper/archive/v0.0.2.tar.gz
+  fn: svtyper-0.1.1.tar.gz
+  url: https://github.com/hall-lab/svtyper/archive/v0.1.1.tar.gz
+  md5sum: nope
 
 build:
-  number: 4
+  number: 0
   skip: True # [not py27]
 
 requirements:
   build:
     - python
-    - setuptools
     - pysam
 
   run:
     - python
-    - setuptools
     - pysam
 
 test:

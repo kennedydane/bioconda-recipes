@@ -1,0 +1,28 @@
+package:
+  name: nextflow
+  version: "0.24.1"
+
+build:
+  number: 0
+
+source:
+  fn: nextflow
+  url: https://www.nextflow.io/releases/v0.24.1/nextflow
+  md5: 80ec8c4fe8e766e0bdd1371a50410d1d
+
+requirements:
+  build:
+    - java-jdk >=7.0
+    - coreutils
+  run:
+    - java-jdk >=7.0
+    - coreutils
+
+test:
+  commands:
+    - nextflow -v
+
+about:
+  home: "https://github.com/nextflow-io/nextflow"
+  license: "GPL3"
+  summary: "A DSL for data-driven computational pipelines http://nextflow.io"

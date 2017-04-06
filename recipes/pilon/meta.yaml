@@ -1,22 +1,26 @@
+{% set version = "1.22" %}
+
 package:
   name: pilon
-  version: '1.16'
+  version: {{ version }}
 
 source:
-  fn: pilon-1.16.jar
-  url: https://github.com/broadinstitute/pilon/releases/download/v1.16/pilon-1.16.jar
-  md5: 4a9bc5120130463e71a4fae01339aad8
+  fn: pilon-{{ version }}.jar
+  url: https://github.com/broadinstitute/pilon/releases/download/v{{ version }}/pilon-{{ version }}.jar
+  md5: 3c45568dc1b878a9a0316410ec62ab04
 
 build:
   number: 0
 
 requirements:
   run:
-    - java-jdk
+    - openjdk
+    - python
 
 test:
   commands:
-    - pilon --help | grep  'Usage' > /dev/null
+    - pilon --help | grep  'Usage'
+    - pilon --jar_dir
 
 about:
   home: https://github.com/broadinstitute/pilon/

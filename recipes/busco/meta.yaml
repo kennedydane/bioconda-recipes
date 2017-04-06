@@ -1,0 +1,37 @@
+package:
+  name: busco
+  version: "2.0"
+
+build:
+  # Not available for osx because requires augustus
+  skip: True # [osx]
+  number: 0
+
+source:
+  fn: busco-v2.0.tar.gz
+  url: https://gitlab.com/ezlab/busco/repository/archive.tar.gz?ref=623f5a65
+  md5: eaf3af75825987de39bf1e4570137127
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - blast
+    - hmmer
+    - augustus
+
+about:
+  home: http://busco.ezlab.org/
+  license: GPL
+  summary: BUSCO provides measures for quantitative assessment of genome
+           assembly, gene set, and transcriptome completeness based on
+           evolutionarily informed expectations of gene content from
+           near-universal single-copy orthologs selected from OrthoDB.
+
+test:
+  commands:
+    - BUSCO.py -h > /dev/null
+    - BUSCO_plot.py -h > /dev/null
+    - busco -h > /dev/null
+    - busco_plot -h > /dev/null

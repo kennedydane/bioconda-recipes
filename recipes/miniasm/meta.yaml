@@ -1,22 +1,27 @@
+{% set name = "miniasm" %}
+{% set version = "0.2_r159" %}
+
 package:
-  name: miniasm
-  version: "0.2"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 build:
   number: 0
 
 source:
-  fn: v0.2.tar.gz
-  url: https://github.com/lh3/miniasm/archive/v0.2.tar.gz
-  md5: e1f05eb352919b86c2b72832fecbac76
-
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/lh3/miniasm/archive/2c435005726c9b52c97e2b6b046fff2bbb659e79.tar.gz
+  md5: b94c0f5188ac87be34903111c8e468e3
 
 requirements:
   build:
-  - gcc
+  - gcc [linux]
+  - llvm [osx]
+  - zlib
 
   run:
-  - libgcc
+  - libgcc [linux]
+  - zlib
 
 test:
   commands:

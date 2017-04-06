@@ -7,17 +7,15 @@ source:
   url: https://cpan.metacpan.org/authors/id/P/PH/PHRED/Archive-Zip-1.55.tar.gz
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
-    - gcc
-    - perl-threaded
-    - perl-app-cpanminus
+    - perl
     - perl-module-build
+    - perl-app-cpanminus
   run:
-    - libgcc
-    - perl-threaded
+    - perl
 
 about:
   home: https://metacpan.org/pod/Archive::Zip
